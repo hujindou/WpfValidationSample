@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfValidationSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfValidationSample"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip"
+        Value="{Binding RelativeSource={RelativeSource Self},
+                        Path=(Validation.Errors)[0].ErrorContent}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="106,78,0,0" TextWrapping="Wrap" Text="{Binding TextA,ValidatesOnDataErrors=True}" VerticalAlignment="Top" Width="168"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="106,106,0,0" TextWrapping="Wrap" Text="{Binding TextB,ValidatesOnExceptions=True}" VerticalAlignment="Top" Width="168"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="106,137,0,0" TextWrapping="Wrap" Text="{Binding IntA,ValidatesOnDataErrors=True,ValidatesOnExceptions=True}" VerticalAlignment="Top" Width="168"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="106,168,0,0" TextWrapping="Wrap" Text="{Binding IntB,ValidatesOnDataErrors=True,ValidatesOnExceptions=True}" VerticalAlignment="Top" Width="168"/>
+        <Button Content="Submit" HorizontalAlignment="Left" Margin="106,212,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Label Content="Input a-z or symbol got error, input number > 10 do not trigger error" HorizontalAlignment="Left" Margin="296,134,0,0" VerticalAlignment="Top"/>
+        <Label Content="Input a-z or symbol got error, input number > 10 trigger error" HorizontalAlignment="Left" Margin="296,165,0,0" VerticalAlignment="Top"/>
+        <Label Content="" Name="log" HorizontalAlignment="Left" Margin="106,246,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
