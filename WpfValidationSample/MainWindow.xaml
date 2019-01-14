@@ -5,7 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfValidationSample"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Width="1366"
+        Height="768"
+        FontSize="18"
+        Margin="0"
+        Loaded="Window_Loaded"
+        Title="MainWindow">
     <Window.Resources>
         <Style TargetType="TextBox">
             <Style.Triggers>
@@ -18,14 +23,22 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="106,78,0,0" TextWrapping="Wrap" Text="{Binding TextA,ValidatesOnDataErrors=True}" VerticalAlignment="Top" Width="168"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="106,106,0,0" TextWrapping="Wrap" Text="{Binding TextB,ValidatesOnExceptions=True}" VerticalAlignment="Top" Width="168"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="106,137,0,0" TextWrapping="Wrap" Text="{Binding IntA,ValidatesOnDataErrors=True,ValidatesOnExceptions=True}" VerticalAlignment="Top" Width="168"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="106,168,0,0" TextWrapping="Wrap" Text="{Binding IntB,ValidatesOnDataErrors=True,ValidatesOnExceptions=True}" VerticalAlignment="Top" Width="168"/>
-        <Button Content="Submit" HorizontalAlignment="Left" Margin="106,212,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Label Content="Input a-z or symbol got error, input number > 10 do not trigger error" HorizontalAlignment="Left" Margin="296,134,0,0" VerticalAlignment="Top"/>
-        <Label Content="Input a-z or symbol got error, input number > 10 trigger error" HorizontalAlignment="Left" Margin="296,165,0,0" VerticalAlignment="Top"/>
-        <Label Content="" Name="log" HorizontalAlignment="Left" Margin="106,246,0,0" VerticalAlignment="Top"/>
-
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBox HorizontalAlignment="Left" LostFocus="TextBox_LostFocus" Grid.Row="0" TextWrapping="Wrap" Text="{Binding TextA,ValidatesOnDataErrors=True}" Width="168"/>
+        <local:TestTextBox GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Grid.Row="1" TextWrapping="Wrap" Text="{Binding TextB,ValidatesOnExceptions=True}" Width="168"/>
+        <TextBox HorizontalAlignment="Left" LostFocus="TextBox_LostFocus" Grid.Row="2" TextWrapping="Wrap" Text="{Binding IntA,ValidatesOnDataErrors=True,ValidatesOnExceptions=True}" Width="168"/>
+        <TextBox HorizontalAlignment="Left" LostFocus="TextBox_LostFocus" Grid.Row="4" TextWrapping="Wrap" Text="{Binding IntB,ValidatesOnDataErrors=True,ValidatesOnExceptions=True}" Width="168"/>
+        <local:TestTextBox IsIgnoreAutoKeyBoard="True" InputMethod.IsInputMethodEnabled="False" InputScope="Number" Grid.Row="3" Width="300" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" />
+        <Button Grid.Row="5" Content="Submit" Click="Button_Click" HorizontalAlignment="Left" Width="210"/>
+        <Label Grid.Row="2" Content="Input a-z or symbol got error, input number > 10 do not trigger error" HorizontalAlignment="Right" />
+        <Label Grid.Row="4" Content="Input a-z or symbol got error, input number > 10 trigger error" HorizontalAlignment="Right" />
+        <Label Grid.Row="5" Content="" Name="log" HorizontalAlignment="Right"/>
     </Grid>
 </Window>
