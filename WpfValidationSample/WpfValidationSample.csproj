@@ -96,5 +96,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DLLInvoke\DLLInvoke.csproj">
+      <Project>{09c6117a-e581-4b63-8138-fcb6d07b8884}</Project>
+      <Name>DLLInvoke</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

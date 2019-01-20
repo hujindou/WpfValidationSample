@@ -5,12 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfValidationSample"
         mc:Ignorable="d"
-        Width="1366"
-        Height="768"
         FontSize="18"
         Margin="0"
         Loaded="Window_Loaded"
-        Title="MainWindow">
+        Title="MainWindow" Width="1126.8">
     <Window.Resources>
         <Style TargetType="TextBox">
             <Style.Triggers>
@@ -40,5 +38,8 @@
         <Label Grid.Row="2" Content="Input a-z or symbol got error, input number > 10 do not trigger error" HorizontalAlignment="Right" />
         <Label Grid.Row="4" Content="Input a-z or symbol got error, input number > 10 trigger error" HorizontalAlignment="Right" />
         <Label Grid.Row="5" Content="" Name="log" HorizontalAlignment="Right"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="211,0,0,0" VerticalAlignment="Top" Width="172" Height="65" Click="Button_Click_1"/>
+        <Button Content="Suspend" HorizontalAlignment="Left" Margin="410,0,0,0" VerticalAlignment="Top" Width="155" Height="65" Click="Button_Click_2"/>
+        <Button Content="Resume" HorizontalAlignment="Left" Margin="601,0,0,0" VerticalAlignment="Top" Width="187" Height="65" Click="Button_Click_3"/>
     </Grid>
 </Window>
