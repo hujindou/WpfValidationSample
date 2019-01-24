@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfValidationSample", "WpfV
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLLInvoke", "DLLInvoke\DLLInvoke.csproj", "{09C6117A-E581-4B63-8138-FCB6D07B8884}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Animation", "Animation\Animation.csproj", "{82A24229-4B12-49BE-902B-E15418DA72AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{09C6117A-E581-4B63-8138-FCB6D07B8884}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09C6117A-E581-4B63-8138-FCB6D07B8884}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09C6117A-E581-4B63-8138-FCB6D07B8884}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82A24229-4B12-49BE-902B-E15418DA72AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82A24229-4B12-49BE-902B-E15418DA72AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82A24229-4B12-49BE-902B-E15418DA72AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82A24229-4B12-49BE-902B-E15418DA72AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
